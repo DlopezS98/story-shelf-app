@@ -6,7 +6,7 @@ export default class BooksService {
     const promise = new Promise<IBook[]>((resolve) => {
       setTimeout(() => {
         resolve(RecommendedBooks);
-      }, 5000);
+      }, 3000);
     });
     // return Promise.resolve(RecommendedBooks);
     return promise;
