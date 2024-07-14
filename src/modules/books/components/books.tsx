@@ -2,13 +2,15 @@ import React from 'react';
 import { Box, Button, Card, CardContent, CardMedia, Tab, Tabs, Typography } from "@mui/material";
 
 
-import bookStackImage from '../../../assets/books-stack.png';
+import Recommended from './recommended';
+import RecentlyRead from './recently-read';
 import CustomTabPanel from './custom-tab-panel';
+import bookStackImage from '../../../assets/books-stack.png';
 
 export default function Books() {
   const [value, setValue] = React.useState(1);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (_: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
@@ -21,7 +23,7 @@ export default function Books() {
             <Typography variant="body1">
               Welcome to Story Shelf, a place where you can find your next favorite book.
             </Typography>
-            <Button variant="contained" color="primary" sx={{ mt: 2 }}>Get Started</Button>
+            <Button variant="contained" color="secondary" sx={{ mt: 2 }}>Get Started</Button>
           </Box>
           <Box sx={{ flex: 1 }}>
             <CardMedia
@@ -47,10 +49,10 @@ export default function Books() {
             <Tab value={1} label="Recently Accessed (read)" />
           </Tabs>
           <CustomTabPanel value={value} index={0}>
-            Item One
+            <Recommended />
           </CustomTabPanel>
           <CustomTabPanel value={value} index={1}>
-            Item Two
+            <RecentlyRead />
           </CustomTabPanel>
         </CardContent>
       </Card>
