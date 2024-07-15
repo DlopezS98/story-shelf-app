@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import useBookCategories from '../hooks/use-book-categories';
 import React from 'react';
+import useBooksPagination from '../hooks/use-books-pagination';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -60,7 +61,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Discover() {
   const [category, setCategory] = React.useState('All');
-  const { isLoading, categories } = useBookCategories();
+  const [sortBy, setSortBy] = React.useState('relevance');
+
+  const { categories } = useBookCategories();
+  const { isLoading, books, canLoadNextPage, loadNextPage } = useBooksPagination();
+
+  const handleSortByChange = (event: SelectChangeEvent) => {
+    setSortBy(event.target.value);
+  };
 
   const handleChange = (event: SelectChangeEvent) => {
     const category = categories.find((category) => category.id === event.target.value);
@@ -108,17 +116,30 @@ export default function Discover() {
           {/* <FormHelperText>With label + helper text</FormHelperText> */}
         </FormControl>
         <FormControl sx={{ width: 280, ml: 2 }}>
-          <InputLabel id="demo-simple-select-helper-label">Sort By</InputLabel>
+          <InputLabel>Sort By</InputLabel>
           <Select
-            value={10}
+            value={sortBy}
+            onChange={handleSortByChange}
             label="Sort By"
           >
-            <MenuItem value={10}>Relevance</MenuItem>
-            <MenuItem value={20}>Newest</MenuItem>
+            <MenuItem value='relevance'>Relevance</MenuItem>
+            <MenuItem value='newest'>Newest</MenuItem>
           </Select>
         </FormControl>
       </Box>
       <Divider sx={{ mb: 2 }} />
+      <Box>
+        {isLoading ? (
+          <Box>Loading...</Box>
+        ) : (
+          <Box>
+            {books.map((book) => (
+              <Box key={book.id}>{book.title}</Box>
+            ))}
+            <Button disabled={!canLoadNextPage} onClick={loadNextPage}>Load More</Button>
+          </Box>
+        )}
+      </Box>
     </Box>
   );
 }
