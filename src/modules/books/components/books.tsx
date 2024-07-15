@@ -1,5 +1,16 @@
 import React from 'react';
-import { Box, Button, Card, CardContent, CardMedia, Paper, Tab, Tabs, Typography } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
+import { 
+  Box, 
+  Button, 
+  Card, 
+  CardContent, 
+  CardMedia, 
+  Paper, 
+  Tab, 
+  Tabs, 
+  Typography 
+} from "@mui/material";
 
 import './books.css';
 import Recommended from './recommended';
@@ -8,11 +19,15 @@ import CustomTabPanel from './custom-tab-panel';
 import bookStackImage from '../../../assets/books-stack.png';
 
 export default function Books() {
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = React.useState(0);
+
+  const navigate = useNavigate();
 
   const handleChange = (_: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
+  const handleGetStarted = () => navigate('/discover');
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -23,7 +38,7 @@ export default function Books() {
             <Typography variant="body1">
               Welcome to Story Shelf, a place where you can find your next favorite book.
             </Typography>
-            <Button variant="contained" color="secondary" sx={{ mt: 2 }}>Get Started</Button>
+            <Button onClick={handleGetStarted} variant="contained" color="secondary" sx={{ mt: 2 }}>Get Started</Button>
           </Box>
           <Box sx={{ flex: 1 }}>
             <CardMedia

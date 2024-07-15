@@ -1,7 +1,9 @@
+import { Box, Typography } from "@mui/material";
+
 export default function Discover() {
   return (
-    <div>
-      <h1>Discover</h1>
-    </div>
+    <Box sx={{ display: "flex" }}>
+      <Typography variant="h4">Discover</Typography>
+    </Box>
   );
 }

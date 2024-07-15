@@ -108,6 +108,9 @@ const darkTheme = createTheme({
     background: {
       default: '#282c34',
       paper: '#121212',
+    },
+    secondary: {
+      main: '#9b51e0',
     }
   },
 });
@@ -146,7 +149,7 @@ export default function MiniDrawer() {
     <ThemeProvider theme={darkTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar position="fixed" open={open}>
+        <AppBar position="fixed" open={open} elevation={0}>
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
               <IconButton
