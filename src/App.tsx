@@ -20,9 +20,10 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import SearchIcon from '@mui/icons-material/Search';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { AccountCircle } from '@mui/icons-material';
-import { Menu, MenuItem } from '@mui/material';
+import { Button, Menu, MenuItem, useScrollTrigger } from '@mui/material';
 
 const drawerWidth = 240;
 
@@ -115,11 +116,28 @@ const darkTheme = createTheme({
   },
 });
 
+interface ElevationScrollProps {
+  children: React.ReactElement;
+}
+
+function ElevationScroll(props: ElevationScrollProps) {
+  const { children } = props;
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0
+  });
+
+  return React.cloneElement(children, {
+    // elevation: trigger ? 0 : 0,
+    sx: { backgroundColor: trigger ? "#121212" : "#282c34" }
+  });
+}
+
 export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  
+
   const navigate = useNavigate();
 
   const handleDrawerOpen = () => {
@@ -149,58 +167,64 @@ export default function MiniDrawer() {
     <ThemeProvider theme={darkTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar position="fixed" open={open} elevation={0}>
-          <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                onClick={handleDrawerOpen}
-                edge="start"
-                sx={{
-                  marginRight: 5,
-                  ...(open && { display: 'none' }),
-                }}
-              >
-                <MenuIcon />
-              </IconButton>
-              <Typography variant="h6" noWrap component="div">
-                Story Shelf
-              </Typography>
-            </Box>
-            <div>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-                edge="end"
-              >
-                <AccountCircle />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose}>My Account</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
-              </Menu>
-            </div>
-          </Toolbar>
-        </AppBar>
+        <ElevationScroll>
+          <AppBar position="fixed" open={open} elevation={0}>
+            <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  onClick={handleDrawerOpen}
+                  edge="start"
+                  sx={{
+                    marginRight: 5,
+                    ...(open && { display: 'none' }),
+                  }}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Typography variant="h6" noWrap component="div">
+                  Story Shelf
+                </Typography>
+              </Box>
+              <div>
+                <Button sx={{ borderRadius: 12, width: 160 }} variant="contained" color='secondary' startIcon={<SearchIcon />}>
+                  Search...
+                </Button>
+                <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleMenu}
+                  color="inherit"
+                  edge="end"
+                  style={{ marginLeft: 10 }}
+                >
+                  <AccountCircle />
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                  }}
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}
+                >
+                  <MenuItem onClick={handleClose}>My Account</MenuItem>
+                  <MenuItem onClick={handleClose}>Logout</MenuItem>
+                </Menu>
+              </div>
+            </Toolbar>
+          </AppBar>
+        </ElevationScroll>
         <Drawer variant="permanent" open={open}>
           <DrawerHeader>
             <IconButton onClick={handleDrawerClose}>
