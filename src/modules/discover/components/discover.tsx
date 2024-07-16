@@ -9,6 +9,7 @@ import {
   InputBase,
   InputLabel,
   MenuItem,
+  Modal,
   Select,
   SelectChangeEvent,
   styled,
@@ -18,6 +19,9 @@ import useBookCategories from '../hooks/use-book-categories';
 import React from 'react';
 import useBooksPagination from '../hooks/use-books-pagination';
 import DiscoverCardBook from './discover-card-book';
+import BookModel from '../../books/models/book.model';
+import CustomModal from '../../core/components/custom-modal';
+import BookDetails from '../../core/components/book-details';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -63,12 +67,24 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Discover() {
+  const [selectedBook, setSelectedBook] = React.useState<BookModel | null>(null);
+
   const [category, setCategory] = React.useState('All');
   const [sortBy, setSortBy] = React.useState('relevance');
   const [search, setSearch] = React.useState('');
 
   const { categories } = useBookCategories();
-  const { isLoading, books, canLoadNextPage, loadNextPage, setFilterCategory, setFilterSearch, setFilterSortBy } = useBooksPagination();
+  const {
+    isLoading,
+    books,
+    canLoadNextPage,
+    loadNextPage,
+    setFilterCategory,
+    setFilterSearch,
+    setFilterSortBy
+  } = useBooksPagination();
+
+  const [open, setOpen] = React.useState(false);
 
   const handleSortByChange = (event: SelectChangeEvent) => {
     setSortBy(event.target.value);
@@ -101,11 +117,21 @@ export default function Discover() {
     );
   };
 
+  const handleBookClick = (book: BookModel) => {
+    console.log('Book clicked', book);
+    setSelectedBook(book);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const BooksLayout = () => {
     return (
       <Box sx={{ display: "flex", flexDirection: 'row', gap: 2, flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
         {
-          books.map((book) => (<DiscoverCardBook key={book.id} book={book} onBookClick={() => {}} />))
+          books.map((book) => (<DiscoverCardBook key={book.id} book={book} onBookClick={() => handleBookClick(book)} />))
         }
       </Box>
     );
@@ -163,6 +189,10 @@ export default function Discover() {
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         {isLoading ? (<LoadingIndicator />) : (<BooksLayout />)}
       </Box>
+
+      <CustomModal open={open} onClose={() => { }} handleClose={handleClose}>
+        { selectedBook ? <BookDetails book={selectedBook} /> : null }
+      </CustomModal>
     </Box>
   );
 }
