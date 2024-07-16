@@ -118,7 +118,6 @@ export default function Discover() {
   };
 
   const handleBookClick = (book: BookModel) => {
-    console.log('Book clicked', book);
     setSelectedBook(book);
     setOpen(true);
   };

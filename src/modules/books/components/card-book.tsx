@@ -13,14 +13,15 @@ import BookModel from "../models/book.model";
 
 export interface ICardBookProps {
   bookModel: BookModel;
+  onBookClick: () => void;
 }
 
 const CardBook: React.FC<ICardBookProps> = (props) => {
-  const { bookModel } = props;
+  const { bookModel, onBookClick } = props;
 
   return (
     <Card sx={{ minWidth: 250, marginBottom: 3 }} className="shadow">
-      <CardActionArea>
+      <CardActionArea onClick={onBookClick} >
         <CardMedia
           style={{ objectFit: 'contain' }}
           component="img"
