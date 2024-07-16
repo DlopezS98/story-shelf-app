@@ -13,7 +13,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import CollectionsBookmarkIcon from '@mui/icons-material/CollectionsBookmark';
-import TouchAppIcon from '@mui/icons-material/TouchApp';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
@@ -158,8 +157,7 @@ export default function MiniDrawer() {
 
   const drawerItems: DrawerItem[] = [
     { key: 'home', icon: <HomeIcon />, text: 'Home', path: '/' },
-    { key: 'discover', icon: <TouchAppIcon />, text: 'Discover', path: '/discover' },
-    { key: 'recommendations', icon: <CollectionsBookmarkIcon />, text: 'Recommendations', path: '/recommendations' },
+    { key: 'discover', icon: <CollectionsBookmarkIcon />, text: 'Discover', path: '/discover' },
     { key: 'wishlist', icon: <BookmarkIcon />, text: 'Wishlist', path: '/wishlist' },
   ];
 
