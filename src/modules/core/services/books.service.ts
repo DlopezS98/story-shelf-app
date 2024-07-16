@@ -90,7 +90,7 @@ export default class BooksService {
       epubAvailable: book.accessInfo.epub.isAvailable,
       etag: book.etag,
       imageLinks: this.mapImageLinks(book.volumeInfo.imageLinks),
-      industryIdentifiers: book.volumeInfo.industryIdentifiers,
+      industryIdentifiers: book.volumeInfo.industryIdentifiers ?? [],
       kind: book.kind,
       language: book.volumeInfo.language,
       previewLink: book.volumeInfo.previewLink,

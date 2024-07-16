@@ -4,8 +4,9 @@ import BookmarkIcon from '@mui/icons-material/Bookmark';
 import DownloadIcon from '@mui/icons-material/Download';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
+import './book-details.css';
 import BookModel from '../../books/models/book.model';
-import { Box, Button, Divider, IconButton, Typography } from '@mui/material';
+import { Box, Button, Divider, IconButton, Paper, Typography } from '@mui/material';
 
 export interface BookDetailsProps {
   book: BookModel;
@@ -17,14 +18,18 @@ const BookDetails: React.FC<BookDetailsProps> = (props) => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2 }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}></Box>
         <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+          <div className='book-cover-container'>
+            <img className='book-cover book-shadow' src={book.image} alt={book.title} />
+          </div>
+        </Box>
+        <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'center'  }}>
           <Typography variant="h4">{book.title}</Typography>
           <Typography variant="subtitle1">{book.authors}</Typography>
         </Box>
       </Box>
       <Divider sx={{ mb: 2, mt: 2 }} />
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+      <Paper elevation={1} sx={{ display: 'flex', flexDirection: 'column', gap: 1, p: 3 }}>
         <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2 }}>
           <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>...</Box>
           <Box sx={{ display: 'flex', flexDirection: 'row', flex: 1, gap: 1 }}>
@@ -33,8 +38,7 @@ const BookDetails: React.FC<BookDetailsProps> = (props) => {
                 Start Reading
               </Button>
             </Box>
-            <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}></Box>
-            <Box sx={{ display: 'flex', flexDirection: 'row', flex: 1, gap: 2 }}>
+            <Box sx={{ display: 'flex', flexDirection: 'row', flex: 1, gap: 2, justifyContent: 'end' }}>
               <IconButton sx={{ backgroundColor: '#282c34' }} color="secondary" aria-label="add to wishlist">
                 <BookmarkIcon />
               </IconButton>
@@ -47,6 +51,7 @@ const BookDetails: React.FC<BookDetailsProps> = (props) => {
             </Box>
           </Box>
         </Box>
+        <Divider sx={{ mb: 1, mt: 1 }} />
         <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2 }}>
           <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
             <Typography variant="h6">Description</Typography>
@@ -59,12 +64,12 @@ const BookDetails: React.FC<BookDetailsProps> = (props) => {
             <Typography variant="body1">Identifiers:</Typography>
             {
               book.industryIdentifiers.map((identifier) => (
-                <Typography sx={{ marginLeft: 2 }} key={identifier.type} variant="body1">{identifier.type}: {identifier.identifier}</Typography>
+                <Typography key={identifier.type} variant="body1">{identifier.type}: {identifier.identifier}</Typography>
               ))
             }
           </Box>
         </Box>
-      </Box>
+      </Paper>
     </Box>
   );
 };
