@@ -1,0 +1,7 @@
+.card-container {
+    background-image: url('../../../assets/waves.svg') !important;
+    background-color: #1E1E1E !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}

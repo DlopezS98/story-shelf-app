@@ -1,0 +1,420 @@
+[
+    {
+        "id": "Pe6RGhCXr04C",
+        "kind": "books#volume",
+        "etag": "sIOyBZz+laY",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/Pe6RGhCXr04C",
+        "title": "Software Development and Professional Practice",
+        "subtitle": "",
+        "authors": [
+            "John Dooley"
+        ],
+        "publisher": "Apress",
+        "publishedDate": "2011-10-13",
+        "description": "Software Development and Professional Practice reveals how to design and code great software. What factors do you take into account? What makes a good design? What methods and processes are out there for designing software? Is designing small programs different than designing large ones? How can you tell a good design from a bad one? You'll learn the principles of good software design, and how to turn those principles back into great code. Software Development and Professional Practice is also about code construction—how to write great programs and make them work. What, you say? You've already written eight gazillion programs! Of course I know how to write code! Well, in this book you'll re-examine what you already do, and you'll investigate ways to improve. Using the Java language, you'll look deeply into coding standards, debugging, unit testing, modularity, and other characteristics of good programs. You'll also talk about reading code. How do you read code? What makes a program readable? Can good, readable code replace documentation? How much documentation do you really need? This book introduces you to software engineering—the application of engineering principles to the development of software. What are these engineering principles? First, all engineering efforts follow a defined process. So, you'll be spending a bit of time talking about how you run a software development project and the different phases of a project. Secondly, all engineering work has a basis in the application of science and mathematics to real-world problems. And so does software development! You'll therefore take the time to examine how to design and implement programs that solve specific problems. Finally, this book is also about human-computer interaction and user interface design issues. A poor user interface can ruin any desire to actually use a program; in this book, you'll figure out why and how to avoid those errors. Software Development and Professional Practice covers many of the topics described for the ACM Computing Curricula 2001 course C292c Software Development and Professional Practice. It is designed to be both a textbook and a manual for the working professional.",
+        "industryIdentifiers": [
+            {
+                "type": "ISBN_13",
+                "identifier": "9781430238027"
+            },
+            {
+                "type": "ISBN_10",
+                "identifier": "143023802X"
+            }
+        ],
+        "pageCount": 254,
+        "categories": [
+            "Computers"
+        ],
+        "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=Pe6RGhCXr04C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=Pe6RGhCXr04C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "small": "",
+            "medium": "",
+            "large": "",
+            "extraLarge": ""
+        },
+        "language": "en",
+        "previewLink": "http://play.google.com/books/reader?id=Pe6RGhCXr04C&hl=&source=gbs_api",
+        "country": "NI",
+        "viewability": "PARTIAL",
+        "epubAvailable": true
+    },
+    {
+        "id": "-at-DwAAQBAJ",
+        "kind": "books#volume",
+        "etag": "ZkQhkzxWtgA",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/-at-DwAAQBAJ",
+        "title": "Introduction to Software Engineering",
+        "subtitle": "",
+        "authors": [
+            "Ronald J. Leach"
+        ],
+        "publisher": "CRC Press",
+        "publishedDate": "2018-09-03",
+        "description": "Practical Guidance on the Efficient Development of High-Quality Software Introduction to Software Engineering, Second Edition equips students with the fundamentals to prepare them for satisfying careers as software engineers regardless of future changes in the field, even if the changes are unpredictable or disruptive in nature. Retaining the same organization as its predecessor, this second edition adds considerable material on open source and agile development models. The text helps students understand software development techniques and processes at a reasonably sophisticated level. Students acquire practical experience through team software projects. Throughout much of the book, a relatively large project is used to teach about the requirements, design, and coding of software. In addition, a continuing case study of an agile software development project offers a complete picture of how a successful agile project can work. The book covers each major phase of the software development life cycle, from developing software requirements to software maintenance. It also discusses project management and explains how to read software engineering literature. Three appendices describe software patents, command-line arguments, and flowcharts.",
+        "industryIdentifiers": [
+            {
+                "type": "ISBN_13",
+                "identifier": "9781498705318"
+            },
+            {
+                "type": "ISBN_10",
+                "identifier": "1498705316"
+            }
+        ],
+        "pageCount": 540,
+        "categories": [
+            "Computers"
+        ],
+        "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=-at-DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=-at-DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "small": "",
+            "medium": "",
+            "large": "",
+            "extraLarge": ""
+        },
+        "language": "en",
+        "previewLink": "http://play.google.com/books/reader?id=-at-DwAAQBAJ&hl=&source=gbs_api",
+        "country": "NI",
+        "viewability": "PARTIAL",
+        "epubAvailable": true
+    },
+    {
+        "id": "iA9QDwAAQBAJ",
+        "kind": "books#volume",
+        "etag": "2novrKpzO5Q",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/iA9QDwAAQBAJ",
+        "title": "The Nature of Software Development",
+        "subtitle": "Keep It Simple, Make It Valuable, Build It Piece by Piece",
+        "authors": [
+            "Ron Jeffries"
+        ],
+        "publisher": "Pragmatic Bookshelf",
+        "publishedDate": "2015-02-19",
+        "description": "You need to get value from your software project. You need it \"free, now, and perfect.\" We can't get you there, but we can help you get to \"cheaper, sooner, and better.\" This book leads you from the desire for value down to the specific activities that help good Agile projects deliver better software sooner, and at a lower cost. Using simple sketches and a few words, the author invites you to follow his path of learning and understanding from a half century of software development and from his engagement with Agile methods from their very beginning. The book describes software development, starting from our natural desire to get something of value. Each topic is described with a picture and a few paragraphs. You're invited to think about each topic; to take it in. You'll think about how each step into the process leads to the next. You'll begin to see why Agile methods ask for what they do, and you'll learn why a shallow implementation of Agile can lead to only limited improvement. This is not a detailed map, nor a step-by-step set of instructions for building the perfect project. There is no map or instructions that will do that for you. You need to build your own project, making it a bit more perfect every day. To do that effectively, you need to build up an understanding of the whole process. This book points out the milestones on your journey of understanding the nature of software development done well. It takes you to a location, describes it briefly, and leaves you to explore and fill in your own understanding. What You Need: You'll need your Standard Issue Brain, a bit of curiosity, and a desire to build your own understanding rather than have someone else's detailed ideas poured into your head.",
+        "industryIdentifiers": [
+            {
+                "type": "ISBN_13",
+                "identifier": "9781680505085"
+            },
+            {
+                "type": "ISBN_10",
+                "identifier": "1680505084"
+            }
+        ],
+        "pageCount": 265,
+        "categories": [
+            "Computers"
+        ],
+        "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=iA9QDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=iA9QDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "small": "",
+            "medium": "",
+            "large": "",
+            "extraLarge": ""
+        },
+        "language": "en",
+        "previewLink": "http://play.google.com/books/reader?id=iA9QDwAAQBAJ&hl=&source=gbs_api",
+        "country": "NI",
+        "viewability": "PARTIAL",
+        "epubAvailable": true
+    },
+    {
+        "id": "pELMBQAAQBAJ",
+        "kind": "books#volume",
+        "etag": "JFcTwjxNiC0",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/pELMBQAAQBAJ",
+        "title": "Global Software Development Handbook",
+        "subtitle": "",
+        "authors": [
+            "Raghvinder Sangwan",
+            "Matthew Bass",
+            "Neel Mullick",
+            "Daniel J. Paulish",
+            "Juergen Kazmeier"
+        ],
+        "publisher": "CRC Press",
+        "publishedDate": "2006-09-29",
+        "description": "Economics and technology have dramatically re-shaped the landscape of software development. It is no longer uncommon to find a software development team dispersed across countries or continents. Geographically distributed development challenges the ability to clearly communicate, enforce standards, ensure quality levels, and coordinate tasks. Globa",
+        "industryIdentifiers": [
+            {
+                "type": "ISBN_13",
+                "identifier": "9781420013856"
+            },
+            {
+                "type": "ISBN_10",
+                "identifier": "1420013858"
+            }
+        ],
+        "pageCount": 290,
+        "categories": [
+            "Business & Economics"
+        ],
+        "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=pELMBQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=pELMBQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "small": "",
+            "medium": "",
+            "large": "",
+            "extraLarge": ""
+        },
+        "language": "en",
+        "previewLink": "http://play.google.com/books/reader?id=pELMBQAAQBAJ&hl=&source=gbs_api",
+        "country": "NI",
+        "viewability": "PARTIAL",
+        "epubAvailable": false
+    },
+    {
+        "id": "bgJ-DwAAQBAJ",
+        "kind": "books#volume",
+        "etag": "U7lFo2zUuC4",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/bgJ-DwAAQBAJ",
+        "title": "Software Development",
+        "subtitle": "An Open Source Approach",
+        "authors": [
+            "Allen Tucker"
+        ],
+        "publisher": "CRC Press",
+        "publishedDate": "2011-01-19",
+        "description": "To understand the principles and practice of software development, there is no better motivator than participating in a software project with real-world value and a life beyond the academic arena. Software Development: An Open Source Approach immerses students directly into an agile free and open source software (FOSS) development process. It focus",
+        "industryIdentifiers": [
+            {
+                "type": "ISBN_13",
+                "identifier": "9781439812914"
+            },
+            {
+                "type": "ISBN_10",
+                "identifier": "1439812918"
+            }
+        ],
+        "pageCount": 400,
+        "categories": [
+            "Computers"
+        ],
+        "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=bgJ-DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=bgJ-DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "small": "",
+            "medium": "",
+            "large": "",
+            "extraLarge": ""
+        },
+        "language": "en",
+        "previewLink": "http://play.google.com/books/reader?id=bgJ-DwAAQBAJ&hl=&source=gbs_api",
+        "country": "NI",
+        "viewability": "PARTIAL",
+        "epubAvailable": false
+    },
+    {
+        "id": "K14h2jAzwq4C",
+        "kind": "books#volume",
+        "etag": "3/KicAsimps",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/K14h2jAzwq4C",
+        "title": "Dynamics of Software Development",
+        "subtitle": "",
+        "authors": [
+            "Jim McCarthy"
+        ],
+        "publisher": "",
+        "publishedDate": "1995",
+        "description": "Opening moves; The organization; The competition; The customer; The design; Development; The middle game; Ship mode; The launch; Appendix; Index.",
+        "industryIdentifiers": [
+            {
+                "type": "ISBN_10",
+                "identifier": "1556158238"
+            },
+            {
+                "type": "ISBN_13",
+                "identifier": "9781556158230"
+            }
+        ],
+        "pageCount": 212,
+        "categories": [
+            "Computers"
+        ],
+        "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=K14h2jAzwq4C&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=K14h2jAzwq4C&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "small": "",
+            "medium": "",
+            "large": "",
+            "extraLarge": ""
+        },
+        "language": "en",
+        "previewLink": "http://play.google.com/books/reader?id=K14h2jAzwq4C&hl=&source=gbs_api",
+        "country": "NI",
+        "viewability": "NO_PAGES",
+        "epubAvailable": false
+    },
+    {
+        "id": "jG9bEAAAQBAJ",
+        "kind": "books#volume",
+        "etag": "/RjscCQVh6o",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/jG9bEAAAQBAJ",
+        "title": "Research Anthology on Agile Software, Software Development, and Testing",
+        "subtitle": "",
+        "authors": [
+            "Management Association, Information Resources"
+        ],
+        "publisher": "IGI Global",
+        "publishedDate": "2021-11-26",
+        "description": "Software development continues to be an ever-evolving field as organizations require new and innovative programs that can be implemented to make processes more efficient, productive, and cost-effective. Agile practices particularly have shown great benefits for improving the effectiveness of software development and its maintenance due to their ability to adapt to change. It is integral to remain up to date with the most emerging tactics and techniques involved in the development of new and innovative software. The Research Anthology on Agile Software, Software Development, and Testing is a comprehensive resource on the emerging trends of software development and testing. This text discusses the newest developments in agile software and its usage spanning multiple industries. Featuring a collection of insights from diverse authors, this research anthology offers international perspectives on agile software. Covering topics such as global software engineering, knowledge management, and product development, this comprehensive resource is valuable to software developers, software engineers, computer engineers, IT directors, students, managers, faculty, researchers, and academicians.",
+        "industryIdentifiers": [
+            {
+                "type": "ISBN_13",
+                "identifier": "9781668437032"
+            },
+            {
+                "type": "ISBN_10",
+                "identifier": "1668437031"
+            }
+        ],
+        "pageCount": 2164,
+        "categories": [
+            "Computers"
+        ],
+        "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=jG9bEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=jG9bEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "small": "",
+            "medium": "",
+            "large": "",
+            "extraLarge": ""
+        },
+        "language": "en",
+        "previewLink": "http://play.google.com/books/reader?id=jG9bEAAAQBAJ&hl=&source=gbs_api",
+        "country": "NI",
+        "viewability": "PARTIAL",
+        "epubAvailable": false
+    },
+    {
+        "id": "3JtNSZ7mXhcC",
+        "kind": "books#volume",
+        "etag": "kYSjSZAqolo",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/3JtNSZ7mXhcC",
+        "title": "Advances in Computers",
+        "subtitle": "Quality Software Development",
+        "authors": [
+            "Marvin Zelkowitz"
+        ],
+        "publisher": "Elsevier",
+        "publishedDate": "2006-04-25",
+        "description": "This volume of Advances in Computers is number 66 in the series that began back in 1960. This series presents the ever changing landscape in the continuing evolution of the development of the computer and the field of information processing. Each year three volumes are produced presenting approximately 20 chapters that describe the latest technology in the use of computers today. Volume 66, subtitled \"Quality software development,\" is concerned about the current need to create quality software. It describes the current emphasis in techniques for creating such software and in methods to demonstrate that the software indeed meets the expectations of the designers and purchasers of that software. In-depth surveys and tutorials on software development approaches Well-known authors and researchers in the field Extensive bibliographies with most chapters All chapters focus on software development issues Discussion of high end computing applications, a topic generally not understood by most software professionals",
+        "industryIdentifiers": [
+            {
+                "type": "ISBN_13",
+                "identifier": "9780080462868"
+            },
+            {
+                "type": "ISBN_10",
+                "identifier": "0080462863"
+            }
+        ],
+        "pageCount": 345,
+        "categories": [
+            "Computers"
+        ],
+        "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=3JtNSZ7mXhcC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=3JtNSZ7mXhcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "small": "",
+            "medium": "",
+            "large": "",
+            "extraLarge": ""
+        },
+        "language": "en",
+        "previewLink": "http://play.google.com/books/reader?id=3JtNSZ7mXhcC&hl=&source=gbs_api",
+        "country": "NI",
+        "viewability": "PARTIAL",
+        "epubAvailable": true
+    },
+    {
+        "id": "s1OdpwAACAAJ",
+        "kind": "books#volume",
+        "etag": "LFe/XIf34cQ",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/s1OdpwAACAAJ",
+        "title": "The Unified Software Development Process",
+        "subtitle": "",
+        "authors": [
+            "Ivar Jacobson",
+            "Grady Booch",
+            "James Rumbaugh"
+        ],
+        "publisher": "Addison-Wesley Professional",
+        "publishedDate": "1999",
+        "description": "This landmark book provides a thorough overview of the Unified Process for software development, with a practical focus on modeling using the Unified Modeling Language (UML). The Unified Process goes beyond mere object-oriented analysis and design to spell out a proven family of techniques that supports the complete software development life cycle. The result is a component-based process that is use-case driven, architecture-centric, iterative, and incremental. The Unified Process takes full advantage of the industry-standard Unified Modeling Language. This book demonstrates how the notation and process complement one another, using UML models to illustrate the new process in action. The authors clearly describe the semantics and notation of the different higher-level constructs used in the models. Constructs such as use cases, actors, subsystems, classes, interfaces, active classes, processes, threads, nodes, and most relations are described in the context of a model. Object technology practitioners and software engineers familiar with the authors' past work will appreciate The Unified Software Development Process as a useful means of learning the current best practices in software development.",
+        "industryIdentifiers": [
+            {
+                "type": "ISBN_10",
+                "identifier": "0321822005"
+            },
+            {
+                "type": "ISBN_13",
+                "identifier": "9780321822000"
+            }
+        ],
+        "pageCount": 496,
+        "categories": [
+            "Computers"
+        ],
+        "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=s1OdpwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=s1OdpwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            "small": "",
+            "medium": "",
+            "large": "",
+            "extraLarge": ""
+        },
+        "language": "en",
+        "previewLink": "http://play.google.com/books/reader?id=s1OdpwAACAAJ&hl=&source=gbs_api",
+        "country": "NI",
+        "viewability": "NO_PAGES",
+        "epubAvailable": false
+    },
+    {
+        "id": "UalKAgAAQBAJ",
+        "kind": "books#volume",
+        "etag": "eJba6nnOiXY",
+        "selfLink": "https://www.googleapis.com/books/v1/volumes/UalKAgAAQBAJ",
+        "title": "Lean Software Development",
+        "subtitle": "An Agile Toolkit",
+        "authors": [
+            "Mary Poppendieck",
+            "Thomas David Poppendieck",
+            "Tom Poppendieck"
+        ],
+        "publisher": "Addison-Wesley Professional",
+        "publishedDate": "2003",
+        "description": "Providing a set of helpful thinking tools, this text aims to assist in translating each lean principle to agile software development practices that match the needs of your domain.",
+        "industryIdentifiers": [
+            {
+                "type": "ISBN_13",
+                "identifier": "9780321150783"
+            },
+            {
+                "type": "ISBN_10",
+                "identifier": "0321150783"
+            }
+        ],
+        "pageCount": 236,
+        "categories": [
+            "Computers"
+        ],
+        "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=UalKAgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=UalKAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "small": "",
+            "medium": "",
+            "large": "",
+            "extraLarge": ""
+        },
+        "language": "en",
+        "previewLink": "http://play.google.com/books/reader?id=UalKAgAAQBAJ&hl=&source=gbs_api",
+        "country": "NI",
+        "viewability": "PARTIAL",
+        "epubAvailable": false
+    }
+]

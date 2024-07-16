@@ -1,0 +1,18 @@
+.book-cover-container {
+    height: 250px;
+    position: relative;
+}
+
+.book-cover {
+    position: absolute;
+    height: 300px;
+    width: auto;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #ccc;
+}
+
+.book-shadow {
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,1) !important;
+}
