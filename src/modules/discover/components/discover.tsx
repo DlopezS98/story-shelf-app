@@ -62,12 +62,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Discover() {
   const [category, setCategory] = React.useState('All');
   const [sortBy, setSortBy] = React.useState('relevance');
+  const [search, setSearch] = React.useState('');
 
   const { categories } = useBookCategories();
-  const { isLoading, books, canLoadNextPage, loadNextPage } = useBooksPagination();
+  const { isLoading, books, canLoadNextPage, loadNextPage, setFilterCategory, setFilterSearch, setFilterSortBy } = useBooksPagination();
 
   const handleSortByChange = (event: SelectChangeEvent) => {
     setSortBy(event.target.value);
+    setFilterSortBy(event.target.value);
   };
 
   const handleChange = (event: SelectChangeEvent) => {
@@ -75,7 +77,13 @@ export default function Discover() {
     if (!category) return;
 
     setCategory(category.name);
+    const isAll = category.name === 'All';
+    setFilterCategory(isAll ? '' : category.name);
   };
+
+  const handleChangeSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(event.target.value);
+  }
 
   const getCategory = (name: string) => {
     return categories.find((category) => category.name === name)?.id ?? '0';
@@ -91,10 +99,12 @@ export default function Discover() {
           </SearchIconWrapper>
           <StyledInputBase
             placeholder="Search…"
+            onChange={handleChangeSearch}
+            value={search}
             inputProps={{ 'aria-label': 'search' }}
           />
         </Search>
-        <Button variant="contained" color="secondary">Search</Button>
+        <Button variant="contained" color="secondary" onClick={() => setFilterSearch(search)}>Search</Button>
       </Box>
       <Divider sx={{ mt: 2 }} />
       <Box sx={{ display: "flex", mt: 2, mb: 2, justifyContent: "center" }}>

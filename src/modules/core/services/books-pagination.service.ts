@@ -8,7 +8,7 @@ export default class BooksPaginationService {
   private totalPages = 0;
   private isLoading = false;
   private currentSearch = '';
-  private currentCategory = 'All';
+  private currentCategory = '';
   private currentSortBy = 'Relevance';
   private totalCount = 0;
   
@@ -22,6 +22,9 @@ export default class BooksPaginationService {
   ) {
     this.reset = this.reset.bind(this);
     this.loadNextPage = this.loadNextPage.bind(this);
+    this.setSearch = this.setSearch.bind(this);
+    this.setCategory = this.setCategory.bind(this);
+    this.setSortBy = this.setSortBy.bind(this);
   }
 
   static getInstance(limit: number = 30): BooksPaginationService {
@@ -79,22 +82,25 @@ export default class BooksPaginationService {
     return this.hasMore;
   }
 
-  public setSearch(search: string): void {
+  public setSearch(search: string): Promise<void> {
     this.currentSearch = search;
     this.currentPage = 0;
-    this.loadNextPage();
+    this.books = [];
+    return this.loadNextPage();
   }
 
-  public setCategory(category: string): void {
+  public setCategory(category: string): Promise<void> {
     this.currentCategory = category;
     this.currentPage = 0;
-    this.loadNextPage();
+    this.books = [];
+    return this.loadNextPage();
   }
 
-  public setSortBy(sortBy: string): void {
+  public setSortBy(sortBy: string): Promise<void> {
     this.currentSortBy = sortBy;
     this.currentPage = 0;
-    this.loadNextPage();
+    this.books = [];
+    return this.loadNextPage();
   }
 
   public reset(): void {
