@@ -1,3 +1,4 @@
+import DefaultCover from '../../../assets/book-default-cover.jpg';
 import IBook, { IBookIdentifier, IBookImageLinks } from "../../core/entities/book.entity";
 
 export default class BookModel {
@@ -26,7 +27,8 @@ export default class BookModel {
   }
 
   get image(): string {
-    return this.imageLinks.large || this.imageLinks.medium || this.imageLinks.small || this.thumbnail;
+    const url = this.imageLinks.large || this.imageLinks.medium || this.imageLinks.small || this.thumbnail;
+    return !url ? DefaultCover : url;
   }
 
   private static initLinks(): IBookImageLinks {

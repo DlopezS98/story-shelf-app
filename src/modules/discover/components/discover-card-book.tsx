@@ -1,5 +1,6 @@
 import React from "react";
 import BookModel from "../../books/models/book.model";
+import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
 
 export interface DiscoverCardBookProps {
   book: BookModel;
@@ -11,14 +12,19 @@ const DiscoverCardBook: React.FC<DiscoverCardBookProps> = (props) => {
   const { book, onBookClick } = props;
 
   return (
-    <div className="card">
-      <img src={book.image} className="card-img-top" alt={book.title} />
-      <div className="card-body">
-        <h5 className="card-title">{book.title}</h5>
-        <p className="card-text">{book.authors}</p>
-        <button className="btn btn-primary" onClick={() => onBookClick(book)}>View</button>
-      </div>
-    </div>
+    <Card sx={{ width: 200 }}>
+      <CardActionArea onClick={() => onBookClick(book)}>
+        <CardMedia
+          component="img"
+          height="300"
+          image={book.image}
+          alt={book.title}
+        />
+      </CardActionArea>
+      <CardContent>
+        <Typography sx={{ textAlign: 'center' }} variant="subtitle1">{book.title}</Typography>
+      </CardContent>
+    </Card>
   );
 };
 

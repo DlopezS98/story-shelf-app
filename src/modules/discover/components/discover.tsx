@@ -3,6 +3,7 @@ import {
   alpha,
   Box,
   Button,
+  CircularProgress,
   Divider,
   FormControl,
   InputBase,
@@ -10,11 +11,13 @@ import {
   MenuItem,
   Select,
   SelectChangeEvent,
-  styled
+  styled,
+  Typography
 } from "@mui/material";
 import useBookCategories from '../hooks/use-book-categories';
 import React from 'react';
 import useBooksPagination from '../hooks/use-books-pagination';
+import DiscoverCardBook from './discover-card-book';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -89,6 +92,25 @@ export default function Discover() {
     return categories.find((category) => category.name === name)?.id ?? '0';
   };
 
+  const LoadingIndicator = () => {
+    return (
+      <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
+        <CircularProgress color="secondary" />
+        <Box><Typography>Loading...</Typography></Box>
+      </Box>
+    );
+  };
+
+  const BooksLayout = () => {
+    return (
+      <Box sx={{ display: "flex", flexDirection: 'row', gap: 2, flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+        {
+          books.map((book) => (<DiscoverCardBook key={book.id} book={book} onBookClick={() => {}} />))
+        }
+      </Box>
+    );
+  };
+
   return (
     <Box sx={{ display: "flex", flexDirection: 'column', p: 3 }}>
       <Divider sx={{ mb: 2 }} />
@@ -138,17 +160,8 @@ export default function Discover() {
         </FormControl>
       </Box>
       <Divider sx={{ mb: 2 }} />
-      <Box>
-        {isLoading ? (
-          <Box>Loading...</Box>
-        ) : (
-          <Box>
-            {books.map((book) => (
-              <Box key={book.id}>{book.title}</Box>
-            ))}
-            <Button disabled={!canLoadNextPage} onClick={loadNextPage}>Load More</Button>
-          </Box>
-        )}
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+        {isLoading ? (<LoadingIndicator />) : (<BooksLayout />)}
       </Box>
     </Box>
   );
