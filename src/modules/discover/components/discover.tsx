@@ -1,4 +1,4 @@
-import SearchIcon from '@mui/icons-material/Search';
+import React from 'react';
 import {
   alpha,
   Box,
@@ -9,19 +9,19 @@ import {
   InputBase,
   InputLabel,
   MenuItem,
-  Modal,
   Select,
   SelectChangeEvent,
   styled,
   Typography
 } from "@mui/material";
-import useBookCategories from '../hooks/use-book-categories';
-import React from 'react';
-import useBooksPagination from '../hooks/use-books-pagination';
+import SearchIcon from '@mui/icons-material/Search';
+
 import DiscoverCardBook from './discover-card-book';
 import BookModel from '../../books/models/book.model';
 import CustomModal from '../../core/components/custom-modal';
 import BookDetails from '../../core/components/book-details';
+import useBookCategories from '../hooks/use-book-categories';
+import useBooksPagination from '../hooks/use-books-pagination';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -77,8 +77,6 @@ export default function Discover() {
   const {
     isLoading,
     books,
-    canLoadNextPage,
-    loadNextPage,
     setFilterCategory,
     setFilterSearch,
     setFilterSortBy

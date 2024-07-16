@@ -1,11 +1,11 @@
 import React from 'react';
-
-import useRecommendedBooks from '../hooks/use-recommended-books';
 import { Box, Card, CardContent, Skeleton } from '@mui/material';
+
 import CardBook from './card-book';
 import BookModel from '../models/book.model';
 import CustomModal from '../../core/components/custom-modal';
 import BookDetails from '../../core/components/book-details';
+import useRecommendedBooks from '../hooks/use-recommended-books';
 
 interface BookCardSkeletonProps {
   key: number;
