@@ -1,0 +1,25 @@
+/* wishlist.css */
+.wishlist-container {
+    padding: 16px;
+  }
+  
+  .wishlist-header {
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .wishlist-search {
+    margin-bottom: 16px;
+  }
+  
+  .wishlist-list {
+    margin-bottom: 16px;
+  }
+  
+  .wishlist-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
