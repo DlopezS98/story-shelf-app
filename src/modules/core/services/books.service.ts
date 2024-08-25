@@ -34,7 +34,9 @@ export default class BooksService {
   async getCategories(): Promise<ICategory[]> {
     const category: ICategory = { id: "0", name: "All", books: 0, description: "" };
     const categories = Categories.map((category) => ({ ...category, books: 0, description: '' } as ICategory));
-    return [category, ...categories];
+    const mergedCategories = [category, ...categories];
+    // Sort categories by name
+    return mergedCategories.sort((a, b) => a.name.localeCompare(b.name));
     
     // const normalizeCategory = (name: string) => name.toLowerCase().replace(/ /g, '+');
     // const categoryMap = async (category: ICategory) => {
