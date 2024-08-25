@@ -8,12 +8,12 @@ import BookDetails from '../../core/components/book-details';
 import useRecommendedBooks from '../hooks/use-recommended-books';
 
 interface BookCardSkeletonProps {
-  key: number;
+  key: React.Key;
 }
 
-const BookCardSkeleton: React.FC<BookCardSkeletonProps> = (prop) => {
+const BookCardSkeleton: React.FC<BookCardSkeletonProps> = () => {
   return (
-    <Card className='shadow' key={prop.key} sx={{ width: 230, height: 250 }}>
+    <Card className='shadow' sx={{ width: 230, height: 250 }}>
       <CardContent>
         <Skeleton variant="rectangular" width="100%" height={118} />
         <Skeleton variant="rectangular" width={30} height={15} style={{ marginTop: 10 }} />
