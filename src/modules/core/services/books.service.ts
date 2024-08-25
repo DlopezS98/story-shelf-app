@@ -1,14 +1,17 @@
-import IBook, { IBookImageLinks } from "../entities/book.entity";
-import ICategory from "../entities/category.entity";
-
 import RecommendedBooks from "./books.json";
-import BookDto, { ImageLinks } from "../dtos/google-book.dto";
 import Categories from "./base-categories.json";
+import SfApiBookDto from "../dtos/sfapi-book.dto";
+import ICategory from "../entities/category.entity";
+import Environment from "../../../config/environment";
+import SfApiQueryResult from "../dtos/sfapi-query-result.dto";
+import BookDto, { ImageLinks } from "../dtos/google-book.dto";
+import IBook, { IBookImageLinks } from "../entities/book.entity";
 import GoogleApisResponseDto from "../dtos/google-apis-response.dto";
 import { IQueryResult, PaginationOptions } from "../types/common.type";
 
 export default class BooksService {
-  private readonly baseUrl = 'https://www.googleapis.com/books/v1/volumes';
+  private readonly environment = Environment.getInstance();
+  // private readonly baseUrl = 'https://www.googleapis.com/books/v1/volumes';
 
   constructor() {
     this.getCategories = this.getCategories.bind(this);
@@ -57,19 +60,38 @@ export default class BooksService {
     };
   }
 
+  // async search(options: PaginationOptions): Promise<IQueryResult<IBook>> {
+  //   const query = options.search;
+  //   const category = options.category;
+  //   const sortBy = options.sortBy;
+  //   const limit = options.limit;
+  //   const offset = options.offset;
+
+  //   const url = `${this.baseUrl}?q=${query}+subject:${category}&orderBy=${sortBy}&maxResults=${limit}&startIndex=${offset}`;
+  //   const response = await fetch(url);
+  //   const json = await response.json() as GoogleApisResponseDto<BookDto>;
+  //   const queryResult: IQueryResult<IBook> = {
+  //     items: json.items.map(this.mapBook),
+  //     totalCount: json.totalItems
+  //   };
+
+  //   return queryResult;
+  // }  
+  
   async search(options: PaginationOptions): Promise<IQueryResult<IBook>> {
     const query = options.search;
     const category = options.category;
-    const sortBy = options.sortBy;
     const limit = options.limit;
     const offset = options.offset;
 
-    const url = `${this.baseUrl}?q=${query}+subject:${category}&orderBy=${sortBy}&maxResults=${limit}&startIndex=${offset}`;
+    const baseUrl = this.environment.baseApiUrl;
+    const booksUrl = this.environment.booksEndpoint;
+    const url = `${baseUrl}/${booksUrl}?search=${query}&category=${category}&offset=${offset}&limit=${limit}`;
     const response = await fetch(url);
-    const json = await response.json() as GoogleApisResponseDto<BookDto>;
+    const json = await response.json() as SfApiQueryResult<SfApiBookDto>;
     const queryResult: IQueryResult<IBook> = {
-      items: json.items.map(this.mapBook),
-      totalCount: json.totalItems
+      items: json.items.map(this.fromSfApiBook),
+      totalCount: json.totalCount
     };
 
     return queryResult;
@@ -107,6 +129,37 @@ export default class BooksService {
       large: imageLinks?.large || '',
       medium: imageLinks?.medium || '',
       small: imageLinks?.small || ''
+    };
+  }
+
+  private fromSfApiBook(book: SfApiBookDto): IBook {
+    return {
+      id: book.id,
+      title: book.title,
+      authors: book.authors,
+      categories: book.categories,
+      description: book.description,
+      pageCount: book.pageCount,
+      publishedDate: String(book.publishedDate),
+      publisher: book.publisher,
+      subtitle: book.subtitle,
+      country: book.country,
+      epubAvailable: book.epubAvailable,
+      etag: book.etag,
+      imageLinks: {
+        smallThumbnail: book.imageLinks.smallThumbnail || '',
+        thumbnail: book.imageLinks.thumbnail || '',
+        extraLarge: book.imageLinks.extraLarge || '',
+        large: book.imageLinks.large || '',
+        medium: book.imageLinks.medium || '',
+        small: book.imageLinks.small || ''
+      },
+      industryIdentifiers: book.industryIdentifiers,
+      kind: book.kind,
+      language: book.language,
+      previewLink: book.previewLink,
+      selfLink: book.selfLink,
+      viewability: book.viewability
     };
   }
 }
