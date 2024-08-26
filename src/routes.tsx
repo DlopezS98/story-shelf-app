@@ -4,7 +4,8 @@ import App from './App';
 import Login from './modules/auth/components/login';
 import Discover from './modules/discover/components/discover';
 import Books from './modules/books/components/books';
-import Wishlist from './modules/core/components/wishlist';
+import WishList from './modules/wish-list/components/wish-list';
+// import Wishlist from './modules/core/components/wishlist';
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
       { path: '/', element: <Books /> },
       { path: '/discover', element: <Discover /> },
       { path: '/recommendations', element: <div><h1>Recommendations</h1></div> },
-      { path: '/wishlist', element: <Wishlist /> },
+      { path: '/wishlist', element: <WishList /> },
     ],
   },
   {
