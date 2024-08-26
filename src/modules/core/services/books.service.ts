@@ -78,7 +78,15 @@ export default class BooksService {
   //   };
 
   //   return queryResult;
-  // }  
+  // }
+  async getById(id: string): Promise<IBook> {
+    const baseUrl = this.environment.baseApiUrl;
+    const booksUrl = this.environment.booksEndpoint;
+    const url = `${baseUrl}/${booksUrl}/${id}`;
+    const response = await fetch(url);
+    const json = await response.json() as SfApiBookDto;
+    return this.fromSfApiBook(json);
+  }
   
   async search(options: PaginationOptions): Promise<IQueryResult<IBook>> {
     const query = options.search;
